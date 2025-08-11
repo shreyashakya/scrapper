@@ -3,6 +3,9 @@
 #python -m pip install beautifulsoup4
 #=>prase html
 
+#go to git bash
+#git config --global user.name "shreeya shakya"
+#git config --global.email "shreya.shakya2064@gmail.com"
 
 #git init
 #git status => if you wany to check what are the status of files
@@ -10,6 +13,15 @@
 #git add .
 #git commit -m "your message"
 #copy paste git code from git hub
+
+###########################
+# 1. change the ccode
+# 2. git add .
+# 3. git commit -m "your message"
+# 4. git push
+###########################
+
+
 
 import requests
 import json
@@ -64,7 +76,6 @@ with open("books.json",'w',encoding="utf-8") as f:
     json.dump (books,f ,indent=4,ensure_ascii=False) 
 
 with open("books.csv",'w',encoding="utf-8",newline="") as f:
-
     writer=csv.DictWriter(f,fieldnames=["title","currency",'price'])
     writer.writeheader()
     writer.writerows(books)
