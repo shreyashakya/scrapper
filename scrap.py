@@ -3,7 +3,19 @@
 #python -m pip install beautifulsoup4
 #=>prase html
 
+
+#git init
+#git status => if you wany to check what are the status of files
+#git diff => if you want to check what are the changes
+#git add .
+#git commit -m "your message"
+#copy paste git code from git hub
+
 import requests
+import json
+import csv
+
+
 from bs4 import BeautifulSoup
 
 
@@ -47,13 +59,11 @@ def scrape_books(url):
 
 books=scrape_books(url)
 
-with open("books.hason",'w',encoding="utf-8") as f:
+with open("books.json",'w',encoding="utf-8") as f:
    
-    import json
     json.dump (books,f ,indent=4,ensure_ascii=False) 
 
 with open("books.csv",'w',encoding="utf-8",newline="") as f:
-    import csv
 
     writer=csv.DictWriter(f,fieldnames=["title","currency",'price'])
     writer.writeheader()
